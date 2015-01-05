@@ -21,6 +21,15 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         // add 64 point margin at top of tableview
         // [20 pts for status bar & 44 pts for search bar]
         tableView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
+        
+        tableView.rowHeight = 80
+        
+        var cellNib = UINib(nibName: TableViewCellIdentifiers.searchResultCell, bundle: nil)
+        tableView.registerNib(cellNib, forCellReuseIdentifier: TableViewCellIdentifiers.searchResultCell)
+    }
+    
+    struct TableViewCellIdentifiers {
+        static let searchResultCell = "SearchResultCell"
     }
 
 }
@@ -35,7 +44,7 @@ extension SearchViewController: UISearchBarDelegate {
         if searchBar.text != "justin bieber" {
             for i in 0...2 {
                 let searchResult = SearchResult()
-                searchResult.name = String(format: "Fake Result %d for '%@'", i, searchBar.text)
+                searchResult.name = String(format: "Fake Result %d for", i)
                 searchResult.artistName = searchBar.text
                 searchResults.append(searchResult)
             }
@@ -66,20 +75,16 @@ extension SearchViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cellIdentifier = "SearchResultCell"
         
-        var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as UITableViewCell!
-        if cell == nil {
-            cell = UITableViewCell(style: .Subtitle, reuseIdentifier: cellIdentifier)
-        }
+        let cell = tableView.dequeueReusableCellWithIdentifier(TableViewCellIdentifiers.searchResultCell, forIndexPath: indexPath) as SearchResultCell
         
         if searchResults.count == 0 {
-            cell.textLabel?.text = "(Nothing found)"
-            cell.detailTextLabel?.text = ""
+            cell.nameLabel.text = "(Nothing found)"
+            cell.artistNameLabel.text = ""
         } else {
             let searchResult = searchResults[indexPath.row]
-            cell.textLabel?.text = searchResult.name
-            cell.detailTextLabel?.text = searchResult.artistName
+            cell.nameLabel.text = searchResult.name
+            cell.artistNameLabel.text = searchResult.artistName
         }
         
         return cell
