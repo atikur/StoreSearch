@@ -13,6 +13,7 @@
 		474F6BFC1A57ACB8000DF878 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 474F6BFB1A57ACB8000DF878 /* Images.xcassets */; };
 		474F6BFF1A57ACB9000DF878 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 474F6BFD1A57ACB9000DF878 /* LaunchScreen.xib */; };
 		474F6C0B1A57ACB9000DF878 /* StoreSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474F6C0A1A57ACB9000DF878 /* StoreSearchTests.swift */; };
+		47EFE3351A5A4B2100F0938A /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EFE3341A5A4B2100F0938A /* SearchResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		474F6C041A57ACB9000DF878 /* StoreSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StoreSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		474F6C091A57ACB9000DF878 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		474F6C0A1A57ACB9000DF878 /* StoreSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreSearchTests.swift; sourceTree = "<group>"; };
+		47EFE3341A5A4B2100F0938A /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				474F6BF41A57ACB8000DF878 /* AppDelegate.swift */,
 				474F6BF61A57ACB8000DF878 /* SearchViewController.swift */,
+				47EFE3341A5A4B2100F0938A /* SearchResult.swift */,
 				474F6BF81A57ACB8000DF878 /* Main.storyboard */,
 				474F6BFB1A57ACB8000DF878 /* Images.xcassets */,
 				474F6BFD1A57ACB9000DF878 /* LaunchScreen.xib */,
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				474F6BF71A57ACB8000DF878 /* SearchViewController.swift in Sources */,
+				47EFE3351A5A4B2100F0938A /* SearchResult.swift in Sources */,
 				474F6BF51A57ACB8000DF878 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +409,7 @@
 				474F6C101A57ACB9000DF878 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		474F6C111A57ACB9000DF878 /* Build configuration list for PBXNativeTarget "StoreSearchTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +418,7 @@
 				474F6C131A57ACB9000DF878 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
