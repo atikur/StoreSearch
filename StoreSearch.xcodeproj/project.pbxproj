@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		471D96361A62E1CC005D0BA8 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 471D96351A62E1CC005D0BA8 /* LoadingCell.xib */; };
 		474F6BF51A57ACB8000DF878 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474F6BF41A57ACB8000DF878 /* AppDelegate.swift */; };
 		474F6BF71A57ACB8000DF878 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474F6BF61A57ACB8000DF878 /* SearchViewController.swift */; };
 		474F6BFA1A57ACB8000DF878 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 474F6BF81A57ACB8000DF878 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		471D96351A62E1CC005D0BA8 /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		474F6BEF1A57ACB8000DF878 /* StoreSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		474F6BF31A57ACB8000DF878 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		474F6BF41A57ACB8000DF878 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				474F6BFB1A57ACB8000DF878 /* Images.xcassets */,
 				47EFE3641A5AFF4F00F0938A /* SearchResultCell.xib */,
 				474F6BFD1A57ACB9000DF878 /* LaunchScreen.xib */,
+				471D96351A62E1CC005D0BA8 /* LoadingCell.xib */,
 				474F6BF21A57ACB8000DF878 /* Supporting Files */,
 			);
 			path = StoreSearch;
@@ -206,6 +209,7 @@
 			files = (
 				474F6BFA1A57ACB8000DF878 /* Main.storyboard in Resources */,
 				474F6BFF1A57ACB9000DF878 /* LaunchScreen.xib in Resources */,
+				471D96361A62E1CC005D0BA8 /* LoadingCell.xib in Resources */,
 				47EFE3651A5AFF4F00F0938A /* SearchResultCell.xib in Resources */,
 				47EFE3691A5B07DB00F0938A /* NothingFoundCell.xib in Resources */,
 				474F6BFC1A57ACB8000DF878 /* Images.xcassets in Resources */,
