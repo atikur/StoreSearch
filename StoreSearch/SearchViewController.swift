@@ -240,6 +240,11 @@ extension SearchViewController: UISearchBarDelegate {
                     println("Dictionary \(dictionary)")
                     
                     searchResults = parseDictionary(dictionary)
+                    
+                    searchResults.sort({result1, result2 in
+                        return result1.name.localizedStandardCompare(result2.name) == NSComparisonResult.OrderedAscending
+                    })
+                    
                     tableView.reloadData()
                     return
                 }
