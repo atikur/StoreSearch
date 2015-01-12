@@ -45,27 +45,14 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         return url
     }
     
-    func performStoreRequestWithURL(url: NSURL) -> String? {
+    func parseJSON(data: NSData) -> [String: AnyObject]? {
         var error: NSError?
-        let resultString = NSString(contentsOfURL: url, encoding: NSUTF8StringEncoding, error: &error)
-        if let error = error {
-            println("Download Error: \(error)")
-            return nil
+        if let json = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(0), error: &error) as? [String: AnyObject] {
+            return json
+        } else if let error = error {
+            println("JSON Error: \(error)")
         } else {
-            return resultString
-        }
-    }
-    
-    func parseJSON(jsonString: String) -> [String: AnyObject]? {
-        if let data = jsonString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) {
-            var error: NSError?
-            if let json = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(0), error: &error) as? [String: AnyObject] {
-                return json
-            } else if let error = error {
-                println("JSON Erro: \(error)")
-            } else {
-                println("Unknown JSON Error")
-            }
+            println("Unknown JSON error")
         }
         return nil
     }
@@ -241,31 +228,42 @@ extension SearchViewController: UISearchBarDelegate {
             hasSearched = true
             searchResults = [SearchResult]()
             
-            let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-            
-            dispatch_async(queue, {
-                let url = self.urlWithSearchText(searchBar.text)
+            let url = self.urlWithSearchText(searchBar.text)
+            let session = NSURLSession.sharedSession()
+            let dataTask = session.dataTaskWithURL(url, completionHandler: {
+                data, response, error in
                 
-                if let jsonString = self.performStoreRequestWithURL(url) {
-                    if let dictionary = self.parseJSON(jsonString) {
-                        self.searchResults = self.parseDictionary(dictionary)
-                        self.searchResults.sort({result1, result2 in
-                            return result1.name.localizedStandardCompare(result2.name) == NSComparisonResult.OrderedAscending
-                        })
-                        
-                        
-                        dispatch_async(dispatch_get_main_queue(), {
-                            self.isLoading = false
-                            self.tableView.reloadData()
-                        })
-                        
-                        return
+                if let error = error {
+                    println("Failure! \(error)")
+                } else if let httpResponse = response as? NSHTTPURLResponse {
+                    if httpResponse.statusCode == 200 {
+                        if let dictionary = self.parseJSON(data) {
+                            self.searchResults = self.parseDictionary(dictionary)
+                            self.searchResults.sort({
+                                result1, result2 in
+                                return result1.name.localizedStandardCompare(result2.name) == NSComparisonResult.OrderedAscending
+                            })
+                            
+                            dispatch_async(dispatch_get_main_queue(), {
+                                self.isLoading = false
+                                self.tableView.reloadData()
+                            })
+                            return
+                        }
+                    } else {
+                        println("Failure! \(response)")
                     }
                 }
+                
                 dispatch_async(dispatch_get_main_queue(), {
+                    self.hasSearched = false
+                    self.isLoading = false
+                    self.tableView.reloadData()
                     self.showNetworkError()
                 })
             })
+            
+            dataTask.resume()
         }
     }
     
