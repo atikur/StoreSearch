@@ -12,7 +12,6 @@
 		474F6BF71A57ACB8000DF878 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474F6BF61A57ACB8000DF878 /* SearchViewController.swift */; };
 		474F6BFA1A57ACB8000DF878 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 474F6BF81A57ACB8000DF878 /* Main.storyboard */; };
 		474F6BFC1A57ACB8000DF878 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 474F6BFB1A57ACB8000DF878 /* Images.xcassets */; };
-		474F6BFF1A57ACB9000DF878 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 474F6BFD1A57ACB9000DF878 /* LaunchScreen.xib */; };
 		474F6C0B1A57ACB9000DF878 /* StoreSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474F6C0A1A57ACB9000DF878 /* StoreSearchTests.swift */; };
 		47EFE3351A5A4B2100F0938A /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EFE3341A5A4B2100F0938A /* SearchResult.swift */; };
 		47EFE3651A5AFF4F00F0938A /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47EFE3641A5AFF4F00F0938A /* SearchResultCell.xib */; };
@@ -38,7 +37,6 @@
 		474F6BF61A57ACB8000DF878 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		474F6BF91A57ACB8000DF878 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		474F6BFB1A57ACB8000DF878 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		474F6BFE1A57ACB9000DF878 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		474F6C041A57ACB9000DF878 /* StoreSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StoreSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		474F6C091A57ACB9000DF878 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		474F6C0A1A57ACB9000DF878 /* StoreSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreSearchTests.swift; sourceTree = "<group>"; };
@@ -95,7 +93,6 @@
 				474F6BF81A57ACB8000DF878 /* Main.storyboard */,
 				474F6BFB1A57ACB8000DF878 /* Images.xcassets */,
 				47EFE3641A5AFF4F00F0938A /* SearchResultCell.xib */,
-				474F6BFD1A57ACB9000DF878 /* LaunchScreen.xib */,
 				471D96351A62E1CC005D0BA8 /* LoadingCell.xib */,
 				474F6BF21A57ACB8000DF878 /* Supporting Files */,
 			);
@@ -208,7 +205,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				474F6BFA1A57ACB8000DF878 /* Main.storyboard in Resources */,
-				474F6BFF1A57ACB9000DF878 /* LaunchScreen.xib in Resources */,
 				471D96361A62E1CC005D0BA8 /* LoadingCell.xib in Resources */,
 				47EFE3651A5AFF4F00F0938A /* SearchResultCell.xib in Resources */,
 				47EFE3691A5B07DB00F0938A /* NothingFoundCell.xib in Resources */,
@@ -262,14 +258,6 @@
 				474F6BF91A57ACB8000DF878 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		474F6BFD1A57ACB9000DF878 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				474F6BFE1A57ACB9000DF878 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
