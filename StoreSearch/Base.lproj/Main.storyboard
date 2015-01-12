@@ -31,10 +31,34 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="haL-tS-tWY"/>
                                 </connections>
                             </searchBar>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZDg-GB-T8A">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <items>
+                                    <navigationItem id="i3A-rx-Gqc">
+                                        <nil key="title"/>
+                                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="NB8-Be-f6r">
+                                            <rect key="frame" x="150" y="7" width="300" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="All"/>
+                                                <segment title="Music"/>
+                                                <segment title="Software"/>
+                                                <segment title="E-Books"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="segmentChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="6aw-bI-jWE"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Yyo-zr-nVN" secondAttribute="trailing" id="2RR-oA-CpI"/>
+                            <constraint firstAttribute="trailing" secondItem="ZDg-GB-T8A" secondAttribute="trailing" id="6Mb-9Z-7Ai"/>
+                            <constraint firstItem="ZDg-GB-T8A" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="EKt-vx-qea"/>
+                            <constraint firstItem="ZDg-GB-T8A" firstAttribute="top" secondItem="Yyo-zr-nVN" secondAttribute="bottom" id="dn1-TC-PHm"/>
                             <constraint firstItem="Yyo-zr-nVN" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="ewn-mR-6ic"/>
                             <constraint firstAttribute="trailing" secondItem="nLG-Zn-3o7" secondAttribute="trailing" id="k86-v9-0JT"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="nLG-Zn-3o7" secondAttribute="bottom" id="nA1-EI-9oO"/>
@@ -45,11 +69,13 @@
                     </view>
                     <connections>
                         <outlet property="searchBar" destination="Yyo-zr-nVN" id="IK3-Lq-egC"/>
+                        <outlet property="segmentedControl" destination="NB8-Be-f6r" id="Plf-5F-LmA"/>
                         <outlet property="tableView" destination="nLG-Zn-3o7" id="rBH-Ug-LPa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="137"/>
         </scene>
     </scenes>
 </document>
