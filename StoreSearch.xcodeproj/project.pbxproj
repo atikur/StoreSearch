@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		47001D5A1A65560C00ACC8C7 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47001D591A65560C00ACC8C7 /* GradientView.swift */; };
+		47001D5C1A655BF100ACC8C7 /* BounceAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47001D5B1A655BF100ACC8C7 /* BounceAnimationController.swift */; };
 		471D96361A62E1CC005D0BA8 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 471D96351A62E1CC005D0BA8 /* LoadingCell.xib */; };
 		47376ABC1A64D79E00BBD090 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47376ABB1A64D79E00BBD090 /* DetailViewController.swift */; };
 		47376ABE1A64E12900BBD090 /* DimmingPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47376ABD1A64E12900BBD090 /* DimmingPresentationController.swift */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		47001D591A65560C00ACC8C7 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		47001D5B1A655BF100ACC8C7 /* BounceAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceAnimationController.swift; sourceTree = "<group>"; };
 		471D96351A62E1CC005D0BA8 /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		47376ABB1A64D79E00BBD090 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		47376ABD1A64E12900BBD090 /* DimmingPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimmingPresentationController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				471D96351A62E1CC005D0BA8 /* LoadingCell.xib */,
 				474F6BF21A57ACB8000DF878 /* Supporting Files */,
 				47376ABB1A64D79E00BBD090 /* DetailViewController.swift */,
+				47001D5B1A655BF100ACC8C7 /* BounceAnimationController.swift */,
 			);
 			path = StoreSearch;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				47376ABE1A64E12900BBD090 /* DimmingPresentationController.swift in Sources */,
 				47EFE3351A5A4B2100F0938A /* SearchResult.swift in Sources */,
 				47EFE3671A5B03D400F0938A /* SearchResultCell.swift in Sources */,
+				47001D5C1A655BF100ACC8C7 /* BounceAnimationController.swift in Sources */,
 				47376ABC1A64D79E00BBD090 /* DetailViewController.swift in Sources */,
 				474F6BF51A57ACB8000DF878 /* AppDelegate.swift in Sources */,
 				47001D5A1A65560C00ACC8C7 /* GradientView.swift in Sources */,
