@@ -71,11 +71,56 @@
                         <outlet property="searchBar" destination="Yyo-zr-nVN" id="IK3-Lq-egC"/>
                         <outlet property="segmentedControl" destination="NB8-Be-f6r" id="Plf-5F-LmA"/>
                         <outlet property="tableView" destination="nLG-Zn-3o7" id="rBH-Ug-LPa"/>
+                        <segue destination="jYu-eD-YAF" kind="presentation" identifier="ShowDetail" id="26R-3t-ndV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140" y="137"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="OZT-qA-TNB">
+            <objects>
+                <viewController id="jYu-eD-YAF" customClass="DetailViewController" customModule="StoreSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nHB-04-2y4"/>
+                        <viewControllerLayoutGuide type="bottom" id="miS-J4-7IW"/>
+                    </layoutGuides>
+                    <view key="view" alpha="0.49999999999999961" contentMode="scaleToFill" id="Ig8-9J-mUm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.94999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UnG-xT-xKm" userLabel="Pop-up View">
+                                <rect key="frame" x="180" y="180" width="240" height="240"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QRK-ye-AeH" userLabel="Close Button">
+                                        <rect key="frame" x="3" y="0.0" width="15" height="22"/>
+                                        <state key="normal" image="CloseButton"/>
+                                        <connections>
+                                            <action selector="close:" destination="jYu-eD-YAF" eventType="touchUpInside" id="UV5-tH-N08"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="ZHg-Fb-zHb"/>
+                                    <constraint firstAttribute="height" constant="240" id="b2B-zF-tQv"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="UnG-xT-xKm" secondAttribute="centerY" id="dhV-ly-x8A"/>
+                            <constraint firstAttribute="centerX" secondItem="UnG-xT-xKm" secondAttribute="centerX" id="u9j-Or-fbC"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="exW-wJ-zzk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="859" y="137"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="CloseButton" width="15" height="15"/>
+    </resources>
 </document>
