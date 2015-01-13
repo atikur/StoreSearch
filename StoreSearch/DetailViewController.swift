@@ -18,8 +18,16 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var genreLabel: UILabel!
     @IBOutlet weak var priceButton: UIButton!
     
+    var searchResult: SearchResult!
+    var downloadTask: NSURLSessionDownloadTask?
+    
     @IBAction func close(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func openInStore(sender: AnyObject) {
+        let url = NSURL(string: searchResult.storeURL)
+        UIApplication.sharedApplication().openURL(url)
     }
     
     override func viewDidLoad() {
@@ -31,12 +39,49 @@ class DetailViewController: UIViewController {
         gestureRecognizer.cancelsTouchesInView = false
         gestureRecognizer.delegate = self
         view.addGestureRecognizer(gestureRecognizer)
+        
+        updateUI()
+    }
+    
+    func updateUI() {
+        nameLabel.text = searchResult.name
+        
+        if searchResult.artistName.isEmpty {
+            artistNameLabel.text = "Unknown"
+        } else {
+            artistNameLabel.text = searchResult.artistName
+        }
+        
+        kindLabel.text = searchResult.kindForDisplay()
+        genreLabel.text = searchResult.genre
+        
+        let formatter = NSNumberFormatter()
+        formatter.numberStyle = .CurrencyStyle
+        formatter.currencyCode = searchResult.currency
+        
+        var priceText: String
+        if searchResult.price == 0 {
+            priceText = "Free"
+        } else if let text = formatter.stringFromNumber(searchResult.price) {
+            priceText = text
+        } else {
+            priceText = ""
+        }
+        
+        priceButton.setTitle(priceText, forState: .Normal)
+        
+        let url = NSURL(string: searchResult.artworkURL100)
+        downloadTask = artworkImageView.loadImageWithURL(url)
     }
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         modalPresentationStyle = .Custom
         transitioningDelegate = self
+    }
+    
+    deinit{
+        downloadTask?.cancel()
     }
 }
 

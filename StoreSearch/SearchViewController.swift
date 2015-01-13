@@ -43,6 +43,14 @@ class SearchViewController: UIViewController {
         searchBar.becomeFirstResponder()
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowDetail" {
+            let controller = segue.destinationViewController as DetailViewController
+            let rowIndex = (sender as NSIndexPath).row
+            controller.searchResult = searchResults[rowIndex]
+        }
+    }
+    
     func urlWithSearchText(searchText: String, category: Int) -> NSURL {
         var entityName: String
         switch category {
@@ -324,7 +332,7 @@ extension SearchViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        performSegueWithIdentifier("ShowDetail", sender: nil)
+        performSegueWithIdentifier("ShowDetail", sender: indexPath)
     }
     
     func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
