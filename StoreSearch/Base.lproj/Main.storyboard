@@ -78,6 +78,36 @@
             </objects>
             <point key="canvasLocation" x="140" y="137"/>
         </scene>
+        <!--Landscape View Controller-->
+        <scene sceneID="hoI-ob-w7G">
+            <objects>
+                <viewController storyboardIdentifier="LandscapeViewController" id="q2v-xK-B82" customClass="LandscapeViewController" customModule="StoreSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="M1E-NI-zoA"/>
+                        <viewControllerLayoutGuide type="bottom" id="F9t-wn-rEn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sKQ-TA-6FG">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We're in landscape!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OkL-E2-TDE">
+                                <rect key="frame" x="225" y="289" width="150" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="OkL-E2-TDE" secondAttribute="centerX" id="NX7-mR-HZn"/>
+                            <constraint firstAttribute="centerY" secondItem="OkL-E2-TDE" secondAttribute="centerY" id="e41-a4-diK"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9zr-MV-DCT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="835"/>
+        </scene>
         <!--Detail View Controller-->
         <scene sceneID="OZT-qA-TNB">
             <objects>
