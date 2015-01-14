@@ -18,6 +18,7 @@ class SearchViewController: UIViewController {
     var hasSearched = false
     var isLoading = false
     var dataTask: NSURLSessionDataTask?
+    var landscapeViewController: LandscapeViewController?
     
     @IBAction func segmentChanged(sender: UISegmentedControl) {
         performSearch()
@@ -48,6 +49,38 @@ class SearchViewController: UIViewController {
             let controller = segue.destinationViewController as DetailViewController
             let rowIndex = (sender as NSIndexPath).row
             controller.searchResult = searchResults[rowIndex]
+        }
+    }
+    
+    override func willTransitionToTraitCollection(newCollection: UITraitCollection, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        super.willTransitionToTraitCollection(newCollection, withTransitionCoordinator: coordinator)
+        
+        switch newCollection.verticalSizeClass {
+        case .Compact:
+            showLandscapeViewWithCoordinator(coordinator)
+        case .Regular, .Unspecified:
+            hideLandscapeViewWithCoordinator(coordinator)
+        }
+    }
+    
+    func showLandscapeViewWithCoordinator(coordinator: UIViewControllerTransitionCoordinator) {
+        precondition(landscapeViewController == nil)
+        
+        landscapeViewController = storyboard!.instantiateViewControllerWithIdentifier("LandscapeViewController") as? LandscapeViewController
+        if let controller = landscapeViewController {
+            controller.view.frame = view.bounds
+            view.addSubview(controller.view)
+            addChildViewController(controller)
+            controller.didMoveToParentViewController(self)
+        }
+    }
+
+    func hideLandscapeViewWithCoordinator(coordinator: UIViewControllerTransitionCoordinator) {
+        if let controller = landscapeViewController {
+            controller.willMoveToParentViewController(nil)
+            controller.view.removeFromSuperview()
+            controller.removeFromParentViewController()
+            landscapeViewController = nil
         }
     }
     
